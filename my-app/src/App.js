@@ -1,4 +1,6 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -97,49 +99,60 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
 
+        <div class="container">
+          <div class="row">
+            <h1>My To-do list</h1>
+          </div>
 
-        <h1 className="app-title">MY LIST</h1>
-        <div className="container">
-        <div
-          style={{
-            padding: 30,
-            textAlign: "left",
-            maxWidth: 500,
-            margin: "auto"
-          }}
-        >
-          Add an Item...
-          <br />
-          <input
-            type="text"
-            placeholder="Type item here"
-            value={this.state.newItem}
-            onChange={e => this.updateInput("newItem", e.target.value)}
-          />
-          <button
-            className="add-btn btn-floating"
-            onClick={() => this.addItem()}
-            disabled={!this.state.newItem.length}
-          >
-            <i class="material-icons"> + </i>
-          </button>
-          <br /> <br />
-          <ul>
-            {this.state.list.map(item => {
-              return (
-                <li key={item.id}>
-                  {item.value}
-                  <button className="btn btn-floating" onClick={() => this.deleteItem(item.id)}>
-                    <i class="material-icons">x</i>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
+          <div class="row">
+            <div class="col-md-8 ">
+              <h4 class="">
+                <span class="">Your list</span>
+              </h4>
+            </div>
+            <div class="col-md-8 list-area">
+            <div
+              style={{
+                padding: 30,
+                textAlign: "left",
+                margin: "auto"
+              }}
+            >
+              <br />
+              <input
+              className="text-box"
+                type="text"
+                placeholder="Type item here"
+                value={this.state.newItem}
+                onChange={e => this.updateInput("newItem", e.target.value)}
+              />
+              <button
+                className="add-btn btn-floating"
+                onClick={() => this.addItem()}
+                disabled={!this.state.newItem.length}
+              >
+                <i class="material-icons"> + </i>
+              </button>
+              <br /> <br />
+              <ul class="list-group">
+                {this.state.list.map(item => {
+                  return (
+                    <li key={item.id} class="list-group-item list-item-width">
+                      {item.value}
+                      <button className="btn btn-floating" onClick={() => this.deleteItem(item.id)}>
+                        <i class="material-icons delete-button-spacing">x</i>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            </div>
+
+          </div>
         </div>
-      </div>
       </div>
     );
   }

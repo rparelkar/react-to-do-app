@@ -28,6 +28,26 @@
   color: #61dafb;
 }
 
+.delete-button-spacing {
+  margin-left:1em;
+}
+
+.text-box{
+  width: 24em;
+  border: 0;
+  border-bottom: 1px solid gray;
+  margin-right: 1em;
+  margin-top: 2em;
+}
+
+.list-item-width{
+  width:28em;
+}
+
+.list-area{
+  border: 5px solid lightsteelblue;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
