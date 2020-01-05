@@ -44,6 +44,23 @@
   width:28em;
 }
 
+@media (max-width: 800px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+  .text-box{
+    width: auto;
+    border: 0;
+    border-bottom: 1px solid gray;
+    margin-right: 1em;
+    margin-top: 2em;
+  }
+
+  .list-item-width{
+    width:auto;
+  }
+}
+
+
+
 .list-area{
   border: 5px solid lightsteelblue;
 }
